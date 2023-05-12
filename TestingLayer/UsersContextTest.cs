@@ -67,7 +67,7 @@ namespace TestingLayer
         {
             User readUser = context.Read(user.Id, true);
 
-            Assert.That(readUser.Interests.Contains(i1) && readUser.Interests.Contains(i2), "i1 and i2 is not in the Products list);
+            Assert.That(readUser.Interests.Contains(i1) && readUser.Interests.Contains(i2), "i1 and i2 is not in the Products list");
             
         }
 
@@ -76,7 +76,7 @@ namespace TestingLayer
         {
             List<User> users = (List<User>)context.ReadAll();
 
-            Assert.That(users.Count != 0, "ReadAll() does not return users);
+            Assert.That(users.Count != 0, "ReadAll() does not return users");
         }
 
         [Test]
@@ -102,7 +102,7 @@ namespace TestingLayer
             context.Delete(user.Id);
             int usersAfter = SetupFixture.dbContext.Users.Count();
 
-            Assert.IsTrue(usersBefore - 1 == usersAfter, "Delete() does not work);
+            Assert.IsTrue(usersBefore - 1 == usersAfter, "Delete() does not work");
         }
     }
 }
